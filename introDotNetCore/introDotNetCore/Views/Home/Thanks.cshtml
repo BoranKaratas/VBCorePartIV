@@ -1,0 +1,23 @@
+﻿@model RsvpModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    @if (Model.IsAccept.Value)
+    {
+        <p>Sevindik...</p>
+    }
+    else
+    {
+        <p>Üzüldük...</p>
+    }
+</body>
+</html>

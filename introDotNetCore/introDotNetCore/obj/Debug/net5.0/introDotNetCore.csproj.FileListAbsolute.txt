@@ -109,3 +109,5 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCor
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\introDotNetCore\obj\Debug\net5.0\introDotNetCore.RazorTargetAssemblyInfo.cs
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\introDotNetCore\obj\Debug\net5.0\introDotNetCore.Views.pdb
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\introDotNetCore\obj\Debug\net5.0\Razor\Views\Home\Rsvp.cshtml.g.cs
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\introDotNetCore\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\introDotNetCore\obj\Debug\net5.0\Razor\Views\Home\Thanks.cshtml.g.cs

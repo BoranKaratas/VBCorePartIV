@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using introDotNetCore.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,22 @@ namespace introDotNetCore.Controllers
         }
 
         [HttpPost]
-        public IActionResult Rsvp(IFormCollection forms)
+        public IActionResult Rsvp(RsvpModel rsvpModel)
         {
+            if (ModelState.IsValid)
+            {
+                return View("Thanks",rsvpModel);
+             
+            }
+            //foreach (var item in ModelState.Keys)
+            //{
+            //    Console.WriteLine(item);
+           
+            //}
+            //foreach (var item in ModelState.Values)
+            //{
+            //    Console.WriteLine(item.ValidationState);
+            //}
             return View();
         }
 

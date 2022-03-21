@@ -1,4 +1,4 @@
-﻿
+﻿@model RsvpModel
 @{
     Layout = null;
 }
@@ -13,14 +13,16 @@
 <body>
     <form method="post">
         <p>
-            <input type="email" name="Email" value="" placeholder="E-posta" />    
-
+            <input asp-for="Email" placeholder="E-posta" />    
+            <span asp-validation-for="Email"></span>
         </p>
         <p>
-            <select name="IsAccept">
+            <select asp-for="IsAccept">
+                <option value="">Seçiniz...</option>
                 <option value="true">Geliyorum</option>
                 <option value="false">Gelmiyorum</option>
             </select>
+            <span asp-validation-for="IsAccept"></span>
         </p>
         <button type="submit">Gönder</button>
     </form>
