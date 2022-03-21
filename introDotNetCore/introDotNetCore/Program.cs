@@ -13,6 +13,7 @@ namespace introDotNetCore
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Merhaba Dünya");
             CreateHostBuilder(args).Build().Run();
         }
 
