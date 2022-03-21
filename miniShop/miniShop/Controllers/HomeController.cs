@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using miniShop.Models;
+using miniShop.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,27 +13,18 @@ namespace miniShop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
+            this.productService = productService;
+
         }
 
         public IActionResult Index()
         {
-            var products = new List<Product>
-            {
-                new Product{ Id=1, Name="Mac Book Pro", Discount=0.25, Price=20000, ImageUrl="https://productimages.hepsiburada.net/s/49/222-222/10983949893682.jpg"},
-
-              new Product{ Id=2, Name="Dell", Discount=0.25, Price=20000, ImageUrl="https://productimages.hepsiburada.net/s/49/222-222/10983949893682.jpg"},
-
-              new Product{ Id=3, Name="Huawei", Discount=0.25, Price=20000, ImageUrl="https://productimages.hepsiburada.net/s/49/222-222/10983949893682.jpg"},
-
-              new Product{ Id=4, Name="Xiaomi", Discount=0.25, Price=20000, ImageUrl="https://productimages.hepsiburada.net/s/49/222-222/10983949893682.jpg"},
-
-              new Product{ Id=5, Name="Lenovo", Discount=0.25, Price=20000, ImageUrl="https://productimages.hepsiburada.net/s/49/222-222/10983949893682.jpg"},
-
-            };
+            var products = productService.GetProducts();
             return View(products);
         }
 
