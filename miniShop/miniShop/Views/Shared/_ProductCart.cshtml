@@ -4,6 +4,6 @@
     <div class="card-body">
         <h5 class="card-title">@Model.Name</h5>
         <p class="card-text">@Model.Price TL yerine, sadece @(Model.Price * (1- Model.Discount)) TL </p>
-        <a href="#" class="btn btn-primary">Sepete Ekle</a>
+        <button data-id="@Model.Id" class="btn btn-primary sepet">Sepete Ekle</button>
     </div>
 </div>

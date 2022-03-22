@@ -20,3 +20,23 @@
 {
     <a asp-action="Index" asp-route-page="@i" >@i</a>
 } 
+
+@section Scripts{ 
+    <script>
+        $(document).ready(function () {
+            $('.sepet').on('click', function () {
+                let id = $(this).data('id');
+                $.ajax({
+                    url: 'Cart/AddToCart/' + id,
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (err) {
+
+                    }
+                })
+            });
+        });
+    </script>
+}
