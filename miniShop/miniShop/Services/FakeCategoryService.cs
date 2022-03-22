@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace miniShop.Services
 {
-    public class FakeCategoryService : ICategoryService
-    {
-        private List<Category> categories;
-        public FakeCategoryService()
-        {
-            categories = new List<Category>
-            {
-                new Category{ Id=1, Name="Laptop"},
-                new Category{ Id=2, Name="Telefon"},
+    //public class FakeCategoryService : ICategoryService
+    //{
+    //    private List<Category> categories;
+    //    public FakeCategoryService()
+    //    {
+    //        categories = new List<Category>
+    //        {
+    //            new Category{ Id=1, Name="Laptop"},
+    //            new Category{ Id=2, Name="Telefon"},
 
-            };
-        }
-        public List<Category> GetCategories()
-        {
-            return categories;
-        }
-    }
+    //        };
+    //    }
+    //    public List<Category> GetCategories()
+    //    {
+    //        return categories;
+    //    }
+    //}
 }

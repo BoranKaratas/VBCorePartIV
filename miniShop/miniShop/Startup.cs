@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using miniShop.Data;
 using miniShop.Services;
 using System;
 using System.Collections.Generic;
@@ -25,9 +27,12 @@ namespace miniShop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddScoped<IProductService, FakeProductService>();
-            services.AddScoped<ICategoryService, FakeCategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             services.AddSession();
+            var connectionString = Configuration.GetConnectionString("db");
+
+            services.AddDbContext<VakifShopDbContext>(opt => opt.UseSqlServer(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
