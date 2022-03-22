@@ -22,9 +22,27 @@ namespace miniShop.Controllers
 
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 0)
         {
+            ViewBag.Page = page;
             var products = productService.GetProducts();
+
+            var productsPerPage = 4;
+            var totalPages = Math.Ceiling((decimal)products.Count / productsPerPage);
+
+            ViewBag.TotalPages = totalPages;
+            if (page != 0)
+            {
+                var pagingProducts = products.OrderBy(x => x.Id)
+                                             .Skip((page - 1) * productsPerPage)
+                                             .Take(productsPerPage)
+                                             .ToList();
+
+                return View(pagingProducts);
+            }
+
+           
+
             return View(products);
         }
 

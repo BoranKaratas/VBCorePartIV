@@ -26,6 +26,7 @@ namespace miniShop
         {
             services.AddControllersWithViews();
             services.AddScoped<IProductService, FakeProductService>();
+            services.AddScoped<ICategoryService, FakeCategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
