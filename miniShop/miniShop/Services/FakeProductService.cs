@@ -26,6 +26,12 @@ namespace miniShop.Services
 
             };
         }
+
+        public Product GetProduct(int id)
+        {
+            return products.Find(p => p.Id == id);
+        }
+
         public List<Product> GetProducts()
         {
             return products;

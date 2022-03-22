@@ -27,6 +27,7 @@ namespace miniShop
             services.AddControllersWithViews();
             services.AddScoped<IProductService, FakeProductService>();
             services.AddScoped<ICategoryService, FakeCategoryService>();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +46,7 @@ namespace miniShop
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
