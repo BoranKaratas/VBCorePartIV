@@ -10,5 +10,11 @@ namespace miniShop.Services
     {
         List<Product> GetProducts();
         Product GetProduct(int id);
+        int Add(Product product);
+        int Update(Product product);
+        void Delete(int id);
+        bool IsExist(int id);
+
+
     }
 }

@@ -20,6 +20,8 @@ namespace miniShop.Services
 
         public void Add(Category category)
         {
+           //var dbSet = dbContext.Set<Category>();
+           
             dbContext.Add(category);
             dbContext.SaveChanges();
         }

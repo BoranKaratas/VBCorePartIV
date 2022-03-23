@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using miniShop.Data;
 using miniShop.Services;
 using System;
@@ -32,7 +33,7 @@ namespace miniShop
             services.AddSession();
             var connectionString = Configuration.GetConnectionString("db");
 
-            services.AddDbContext<VakifShopDbContext>(opt => opt.UseSqlServer(connectionString));
+            services.AddDbContext<VakifShopDbContext>(opt => opt.UseSqlServer(connectionString).UseLoggerFactory(LoggerFactory.Create(conf => conf.AddConsole())));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
