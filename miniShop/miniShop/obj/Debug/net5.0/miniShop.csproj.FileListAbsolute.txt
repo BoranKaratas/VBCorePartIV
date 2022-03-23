@@ -156,3 +156,4 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\miniShop\miniS
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\miniShop\miniShop\obj\Debug\net5.0\miniShop.csproj.AssemblyReference.cache
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\miniShop\miniShop\obj\Debug\net5.0\Razor\Views\Products\Edit.cshtml.g.cs
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\miniShop\miniShop\obj\Debug\net5.0\Razor\Views\Users\Login.cshtml.g.cs
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\miniShop\miniShop\obj\Debug\net5.0\Razor\Views\Users\AccessDenied.cshtml.g.cs

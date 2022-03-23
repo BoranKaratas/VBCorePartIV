@@ -1,0 +1,11 @@
+﻿@model string
+@{
+    ViewData["Title"] = "AccessDenied";
+    int value = 0;
+}
+
+<h1>AccessDenied</h1>
+
+<div class="alert alert-danger">
+    <p>Üzgünüm @User.Identity.Name, @Model sayfasını görme yetkin yok</p>
+</div>

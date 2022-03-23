@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace miniShop.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin,Editor")]
     public class ProductsController : Controller
     {
         private readonly IProductService productService;
@@ -27,7 +27,7 @@ namespace miniShop.Controllers
             var products = productService.GetProducts();
             return View(products);
         }
-       
+
         public IActionResult Create()
         {
             List<SelectListItem> selectListItems = getSelectListItems();
@@ -37,7 +37,7 @@ namespace miniShop.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Name","Price","CategoryId","Discount","ImageUrl")]Product product)
+        public IActionResult Create([Bind("Name", "Price", "CategoryId", "Discount", "ImageUrl")] Product product)
         {
             if (ModelState.IsValid)
             {

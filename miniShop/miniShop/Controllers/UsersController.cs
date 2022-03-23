@@ -27,12 +27,13 @@ namespace miniShop.Controllers
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(UserLoginModel userLogin)
+        public async Task<IActionResult> Login(UserLoginModel userLogin, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -47,11 +48,30 @@ namespace miniShop.Controllers
                     ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
                     await HttpContext.SignInAsync(claimsPrincipal);
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
                     return Redirect("/");
                 }
                 ModelState.AddModelError("login", "Hatalı kullanıcı adı ya da şifre");
             }
             return View();
         }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
+        }
+
+        public IActionResult AccessDenied(string returnUrl)
+        {
+            //ViewBag.returnUrl = returnUrl;
+            return View(model:returnUrl);
+        }
     }
+
+
 }
