@@ -41,5 +41,10 @@ namespace miniShop.Data
 
 
         }
+
+
+
+
+        public DbSet<miniShop.Models.UserLoginModel> UserLoginModel { get; set; }
     }
 }

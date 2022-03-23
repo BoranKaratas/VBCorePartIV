@@ -31,6 +31,7 @@ namespace miniShop
             services.AddControllersWithViews();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddSession();
             var connectionString = Configuration.GetConnectionString("db");
 
