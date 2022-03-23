@@ -26,13 +26,15 @@ namespace miniShop.Services
 
         public void Delete(int id)
         {
+            Console.WriteLine("--> Ürün bulunuyor: FirstOrDefault");
             var product = dbContext.Products.FirstOrDefault(x => x.Id == id);
-            
-            dbContext.Products.Remove()
+
+            dbContext.Products.Remove(product);
         }
 
         public Product GetProduct(int id)
         {
+            Console.WriteLine("--> Ürün bulunuyor: Find");
             return dbContext.Products.Find(id);
         }
 
@@ -43,12 +45,15 @@ namespace miniShop.Services
 
         public bool IsExist(int id)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("--> Ürün bulunuyor: Find");
+            return dbContext.Products.Any(x => x.Id == id);
         }
 
         public int Update(Product product)
         {
-            throw new NotImplementedException();
+            //Dikkat! Burada kaç satırın güncellendiği bilgisi döndürülüyor:
+            dbContext.Products.Update(product);
+            return dbContext.SaveChanges();
         }
     }
 }

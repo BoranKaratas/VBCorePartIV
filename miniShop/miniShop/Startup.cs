@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,7 +34,17 @@ namespace miniShop
             services.AddSession();
             var connectionString = Configuration.GetConnectionString("db");
 
-            services.AddDbContext<VakifShopDbContext>(opt => opt.UseSqlServer(connectionString).UseLoggerFactory(LoggerFactory.Create(conf => conf.AddConsole())));
+            services.AddDbContext<VakifShopDbContext>(opt => opt.UseSqlServer(connectionString)
+                                                                .UseLoggerFactory(LoggerFactory.Create(conf => conf.AddConsole())));
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                    .AddCookie(opt =>
+                    {
+                        opt.LoginPath = "/Users/Login";
+                        opt.AccessDeniedPath = "/Users/AccessDenied";                        
+                    });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +66,7 @@ namespace miniShop
             app.UseSession();
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
