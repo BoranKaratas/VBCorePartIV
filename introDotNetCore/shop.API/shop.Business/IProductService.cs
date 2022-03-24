@@ -13,5 +13,8 @@ namespace shop.Business
         Task<ICollection<ProductListDisplayResponse>> GetProducts();
         Task<ProductListDisplayResponse> GetProduct(int id);
         Task<int> Add(AddProductRequest request);
+        Task<bool> isProductExist(int id);      
+        Task UpdateAsync(UpdateProductRequest request);
+        Task Delete(int id);
     }
 }

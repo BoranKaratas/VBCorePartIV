@@ -17,6 +17,7 @@ namespace shop.Business.Profiles
             CreateMap<Product, ProductListDisplayResponse>().ReverseMap();
             //.ForMember(dest=>dest.Price, src=>src.MapFrom(x=>x.Price*(1-x.Discount)));
             CreateMap<AddProductRequest, Product>();
+            CreateMap<UpdateProductRequest, Product>();
         }
     }
 }

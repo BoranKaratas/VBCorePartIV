@@ -33,6 +33,13 @@ namespace shop.Business
 
         }
 
+        public async Task Delete(int id)
+        {
+            var product = dbContext.Products.FirstOrDefault(p => p.Id == id);
+            dbContext.Products.Remove(product);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<ProductListDisplayResponse> GetProduct(int id)
         {
             var product = await dbContext.Products.FindAsync(id);
@@ -55,6 +62,20 @@ namespace shop.Business
 
             var result = mapper.Map<List<ProductListDisplayResponse>>(products);
             return result;
+        }
+
+        public async Task<bool> isProductExist(int id)
+        {
+            return await dbContext.Products.AnyAsync(x => x.Id == id);
+        }
+
+        public async Task UpdateAsync(UpdateProductRequest request)
+        {
+            var product = mapper.Map<Product>(request);
+            //dbContext.Entry<Product>(product).State = EntityState.Modified;
+            dbContext.Products.Update(product);
+            await dbContext.SaveChangesAsync();
+
         }
     }
 }

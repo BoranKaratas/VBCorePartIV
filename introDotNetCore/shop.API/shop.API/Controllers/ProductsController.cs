@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using shop.API.Filters;
 using shop.Business;
 using shop.DTOs.Requests;
 using shop.DTOs.Responses;
@@ -26,7 +27,7 @@ namespace shop.API.Controllers
             var productsDto = await productService.GetProducts();
             return Ok(productsDto);
 
-           
+
         }
 
         [HttpGet("{id}")]
@@ -52,5 +53,35 @@ namespace shop.API.Controllers
             return BadRequest(ModelState);
         }
 
+        [HttpPut("{id}")]
+        [ItemExist]
+        public async Task<IActionResult> UpdateProduct(int id, UpdateProductRequest request)
+        {
+            //if (await productService.isProductExist(id))
+            //{
+                if (ModelState.IsValid)
+                {
+                    await productService.UpdateAsync(request);
+                    return Ok();
+                }
+                return BadRequest(ModelState);
+            //}
+            //return NotFound(new { message = $"{id} id'li bir ürün bulunamadı" });
+        }
+
+        [HttpDelete("{id}")]     
+        [ItemExist]
+        public async Task<IActionResult> Delete(int id)
+        {
+            //if (await productService.isProductExist(id))
+            //{
+                await productService.Delete(id);
+                return Ok();
+            //}
+            //return NotFound(new { message = $"{id} id'li bir ürün bulunamadı" });
+        }
+
     }
+
+
 }
