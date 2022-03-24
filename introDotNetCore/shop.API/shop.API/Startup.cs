@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using shop.API.HealthChecks;
 using shop.Business;
 using shop.Business.Profiles;
 using Shop.DataAccess.Data;
@@ -41,6 +42,17 @@ namespace shop.API
 
             services.AddAutoMapper(typeof(MapProfile));
             services.AddScoped<IProductService, ProductService>();
+            services.AddCors(opt => opt.AddPolicy("Allow", policy =>
+            {
+                policy.AllowAnyOrigin();
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();                
+            }));
+
+            services.AddHealthChecks().AddSqlServer(Configuration.GetConnectionString("db"))
+                                      .AddCheck<CustomHealthChecks>("custom");
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +69,10 @@ namespace shop.API
 
             app.UseRouting();
 
+            app.UseCors("Allow");
+
             app.UseAuthorization();
+            app.UseHealthChecks("/health");
 
             app.UseEndpoints(endpoints =>
             {
