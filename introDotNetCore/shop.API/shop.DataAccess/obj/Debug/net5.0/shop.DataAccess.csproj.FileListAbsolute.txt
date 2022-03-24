@@ -11,7 +11,6 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCor
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.AssemblyInfoInputs.cache
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.AssemblyInfo.cs
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.csproj.CopyComplete
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\ref\shop.DataAccess.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.pdb

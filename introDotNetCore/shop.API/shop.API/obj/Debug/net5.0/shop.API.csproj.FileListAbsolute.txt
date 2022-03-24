@@ -65,3 +65,5 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCor
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\shop.Entities.pdb
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Humanizer.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\shop.DTOs.dll
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\shop.DTOs.pdb

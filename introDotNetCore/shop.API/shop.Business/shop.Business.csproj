@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\shop.DataAccess\shop.DataAccess.csproj" />
+    <ProjectReference Include="..\shop.DTOs\shop.DTOs.csproj" />
   </ItemGroup>
 
 </Project>

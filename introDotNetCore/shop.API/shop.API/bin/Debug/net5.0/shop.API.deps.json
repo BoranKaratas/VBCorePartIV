@@ -1369,6 +1369,7 @@
       },
       "shop.Business/1.0.0": {
         "dependencies": {
+          "shop.DTOs": "1.0.0",
           "shop.DataAccess": "1.0.0"
         },
         "runtime": {
@@ -1389,6 +1390,14 @@
         },
         "compile": {
           "shop.DataAccess.dll": {}
+        }
+      },
+      "shop.DTOs/1.0.0": {
+        "runtime": {
+          "shop.DTOs.dll": {}
+        },
+        "compile": {
+          "shop.DTOs.dll": {}
         }
       },
       "shop.Entities/1.0.0": {
@@ -3813,6 +3822,11 @@
       "sha512": ""
     },
     "shop.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "shop.DTOs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

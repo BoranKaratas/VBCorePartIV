@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "shop.Business/1.0.0": {
         "dependencies": {
+          "shop.DTOs": "1.0.0",
           "shop.DataAccess": "1.0.0"
         },
         "runtime": {
@@ -1049,6 +1050,11 @@
           "shop.DataAccess.dll": {}
         }
       },
+      "shop.DTOs/1.0.0": {
+        "runtime": {
+          "shop.DTOs.dll": {}
+        }
+      },
       "shop.Entities/1.0.0": {
         "runtime": {
           "shop.Entities.dll": {}
@@ -1721,6 +1727,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "shop.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "shop.DTOs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
