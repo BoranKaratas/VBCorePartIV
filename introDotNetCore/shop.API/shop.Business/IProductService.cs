@@ -1,4 +1,5 @@
-﻿using shop.DTOs.Responses;
+﻿using shop.DTOs.Requests;
+using shop.DTOs.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace shop.Business
 {
-   public  interface IProductService
+    public interface IProductService
     {
-         Task<ICollection<ProductListDisplayResponse>> GetProducts();
+        Task<ICollection<ProductListDisplayResponse>> GetProducts();
+        Task<ProductListDisplayResponse> GetProduct(int id);
+        Task<int> Add(AddProductRequest request);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using shop.DTOs.Requests;
 using shop.DTOs.Responses;
 using shop.Entities;
 using System;
@@ -14,7 +15,8 @@ namespace shop.Business.Profiles
         public MapProfile()
         {
             CreateMap<Product, ProductListDisplayResponse>().ReverseMap();
-                //.ForMember(dest=>dest.Price, src=>src.MapFrom(x=>x.Price*(1-x.Discount)));
+            //.ForMember(dest=>dest.Price, src=>src.MapFrom(x=>x.Price*(1-x.Discount)));
+            CreateMap<AddProductRequest, Product>();
         }
     }
 }
