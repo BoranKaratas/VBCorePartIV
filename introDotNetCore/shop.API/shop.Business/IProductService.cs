@@ -9,6 +9,6 @@ namespace shop.Business
 {
    public  interface IProductService
     {
-        ICollection<ProductListDisplayResponse> GetProducts();
+         Task<ICollection<ProductListDisplayResponse>> GetProducts();
     }
 }

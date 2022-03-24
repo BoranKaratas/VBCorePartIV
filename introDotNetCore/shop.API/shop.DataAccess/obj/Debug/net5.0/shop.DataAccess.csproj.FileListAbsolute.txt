@@ -15,3 +15,4 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCor
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\ref\shop.DataAccess.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.pdb
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.genruntimeconfig.cache
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.DataAccess\obj\Debug\net5.0\shop.DataAccess.csproj.CopyComplete

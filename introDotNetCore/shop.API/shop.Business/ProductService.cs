@@ -20,9 +20,9 @@ namespace shop.Business
             this.mapper = mapper;
             this.dbContext = dbContext;
         }
-        public ICollection<ProductListDisplayResponse> GetProducts()
+        public async Task<ICollection<ProductListDisplayResponse>> GetProducts()
         {
-            var products = dbContext.Products.ToList();
+            var products = await dbContext.Products.ToListAsync();
             //var list = new List<ProductListDisplayResponse>();
             //products.ForEach(p => list.Add(new ProductListDisplayResponse
             //{

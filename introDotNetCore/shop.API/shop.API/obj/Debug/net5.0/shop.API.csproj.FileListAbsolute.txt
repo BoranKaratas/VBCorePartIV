@@ -22,7 +22,6 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCor
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\staticwebassets\shop.API.StaticWebAssets.xml
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\scopedcss\bundle\shop.API.styles.css
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\shop.API.RazorTargetAssemblyInfo.cache
-C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\shop.API.csproj.CopyComplete
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\shop.API.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\ref\shop.API.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\shop.API.pdb
@@ -67,3 +66,9 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCor
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\shop.DTOs.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\shop.DTOs.pdb
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

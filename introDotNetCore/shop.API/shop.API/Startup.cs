@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using shop.Business;
+using shop.Business.Profiles;
 using Shop.DataAccess.Data;
 using System;
 using System.Collections.Generic;
@@ -36,6 +38,9 @@ namespace shop.API
             });
 
             services.AddDbContext<vakifShopDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("db")));
+
+            services.AddAutoMapper(typeof(MapProfile));
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
