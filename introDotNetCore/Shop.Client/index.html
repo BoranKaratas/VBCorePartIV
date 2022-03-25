@@ -16,7 +16,13 @@
     <script>
         $(document).ready(function () {
             $('#getir').on('click', function () {
+
+                console.log(btoa('Merhaba ben Türkay'));
                 $.ajax({
+                    headers: {
+                        'Authorization':'Basic ' + 'username:pwd'
+ 
+                    },                
                     url: 'https://localhost:5001/api/Products',
                     dataType: 'json',
                     success: function (data) {

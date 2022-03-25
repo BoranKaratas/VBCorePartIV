@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,15 +8,19 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using shop.API.ConfigurationModels;
 using shop.API.HealthChecks;
 using shop.API.Middlewares;
+using shop.API.Security;
 using shop.Business;
 using shop.Business.Profiles;
 using Shop.DataAccess.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace shop.API
@@ -52,7 +57,29 @@ namespace shop.API
 
             services.AddHealthChecks().AddSqlServer(Configuration.GetConnectionString("db"))
                                       .AddCheck<CustomHealthChecks>("custom");
+
+            //services.AddAuthentication("Basic").AddScheme<BasicOption, BasicHandler>("Basic",null);
+
+            var bearer = Configuration.Get<Bearer>();
+            var key = Encoding.UTF8.GetBytes(bearer.Secret);
             
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(opt =>
+                    {
+                        opt.SaveToken = true;
+                        opt.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateActor = true,
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+
+                            ValidIssuer = bearer.Issuer,
+                            ValidAudience = bearer.Audience,
+                            ValidateIssuerSigningKey = true,
+                            IssuerSigningKey = new SymmetricSecurityKey(key)
+
+                        };
+                    });
             
         }
 
@@ -77,10 +104,14 @@ namespace shop.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            
+
             app.UseCors("Allow");
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+           
+
             app.UseHealthChecks("/health");
             
 
