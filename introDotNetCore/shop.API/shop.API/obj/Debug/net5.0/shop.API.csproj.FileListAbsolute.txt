@@ -70,4 +70,3 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCor
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\HealthChecks.SqlServer.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
-C:\Users\turka\source\repos\Kurumsal\Vakıfbank\.Net Core Part IV\introDotNetCore\shop.API\shop.API\obj\Debug\net5.0\shop.API.csproj.CopyComplete

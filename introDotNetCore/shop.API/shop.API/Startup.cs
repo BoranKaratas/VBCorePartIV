@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using shop.API.HealthChecks;
+using shop.API.Middlewares;
 using shop.Business;
 using shop.Business.Profiles;
 using Shop.DataAccess.Data;
@@ -58,6 +59,12 @@ namespace shop.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //app.Run
+            //app.Use()
+            //app.Map("/test",builder=> builder.ru)
+
+            app.UseMiddleware<HandleBrowserRequest>();
+        
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -65,14 +72,17 @@ namespace shop.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "shop.API v1"));
             }
 
+
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            
             app.UseCors("Allow");
 
             app.UseAuthorization();
             app.UseHealthChecks("/health");
+            
 
             app.UseEndpoints(endpoints =>
             {
