@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -48,6 +48,8 @@ namespace shop.API
 
             services.AddAutoMapper(typeof(MapProfile));
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUserService, UserService>();
+
             services.AddCors(opt => opt.AddPolicy("Allow", policy =>
             {
                 policy.AllowAnyOrigin();
@@ -60,8 +62,10 @@ namespace shop.API
 
             //services.AddAuthentication("Basic").AddScheme<BasicOption, BasicHandler>("Basic",null);
 
-            var bearer = Configuration.Get<Bearer>();
+            var bearer = Configuration.GetSection("Bearer").Get<Bearer>();
             var key = Encoding.UTF8.GetBytes(bearer.Secret);
+
+            //authorize olurken, JWT nasıl onaylanacak (Authentication) - verification?
             
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(opt =>

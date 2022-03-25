@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using shop.API.Filters;
 using shop.Business;
@@ -42,6 +43,7 @@ namespace shop.API.Controllers
             return Ok(productListDisplay);
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddNewProduct(AddProductRequest request)
         {
             if (ModelState.IsValid)
